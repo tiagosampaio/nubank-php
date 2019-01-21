@@ -14,13 +14,20 @@ class Api implements ApiInterface
     /**
      * @var ConfigPool
      */
-    protected $configPool;
+    private $configPool;
+
+    /**
+     * @var Service\ConnectionInterface
+     */
+    private $connection;
 
     public function __construct(
+        Service\ConnectionInterface $connection,
         ConfigPool $configPool,
         string $userId,
         string $password
     ) {
+        $this->connection = $connection;
         $this->configPool = $configPool;
 
         $this->configPool
@@ -32,7 +39,7 @@ class Api implements ApiInterface
     /**
      * @return ConfigPool
      */
-    public function config()
+    public function config() : ConfigPool
     {
         return $this->configPool;
     }
