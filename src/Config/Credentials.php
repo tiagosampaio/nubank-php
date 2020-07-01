@@ -9,7 +9,7 @@ namespace Nubank\Config;
  *
  * @package Nubank\Config
  */
-class Credentials implements ConfigInterface
+class Credentials extends ConfigAbstract
 {
     /**
      * @var string

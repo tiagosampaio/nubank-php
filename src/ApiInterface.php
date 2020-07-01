@@ -11,4 +11,8 @@ namespace Nubank;
  */
 interface ApiInterface
 {
+    /**
+     * @return ConfigPool
+     */
+    public function config() : ConfigPool;
 }
